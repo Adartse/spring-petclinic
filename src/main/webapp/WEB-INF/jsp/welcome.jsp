@@ -8,9 +8,31 @@
 <petclinic:layout pageName="home">
     <h2><fmt:message key="welcome"/></h2>
     <div class="row">
-    	<h2> Project ${title} </h2>
-    	<p><h2> Group ${group} </h2> </p>
-    	<p>
+    
+    	<table border="0" >
+	    <tr>
+	        <td width="150px">
+	        	<spring:url value="/resources/images/logoUS.png" htmlEscape="true" var="logoUS"/>
+            	<img class="img-responsive" src="${logoUS}"/>
+            </td>
+            <td width="20px"></td>
+	        <td width="500px">
+	        	<h2> Project ${title} </h2>
+	        	<p><h2> Group ${group} </h2> </p>
+	        </td>
+	    </tr>
+	    <tr height="30px">
+	    </tr>
+	</table>
+    
+    	<!-- <div class="col-md-12">
+            <spring:url value="/resources/images/logoUS.png" htmlEscape="true" var="logoUS"/>
+            <img class="img-responsive" src="${logoUS}"/>
+        </div> -->
+        
+    	<!-- <h2> Project ${title} </h2>
+    	<p><h2> Group ${group} </h2> </p> -->
+    	<p> Members:
     		<ul>
     		<c:forEach items="${persons}" var="person">
     			<li> ${person.firstName} &nbsp; ${person.lastName}</li>
